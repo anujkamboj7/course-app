@@ -1,5 +1,7 @@
-import { Button, Container, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 import Swiper, { Navigation, Pagination } from "swiper";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import "swiper/css";
@@ -94,7 +96,12 @@ const Testimonial = () => {
                     overflow: "hidden",
                   }}
                 >
-                  <Image layout='fill' src={image} />
+                  <Image
+                    layout='fill'
+                    src={image}
+                    alt='testimonial-img'
+                    priority
+                  />
                 </Box>
                 <Typography
                   className='testimonial-title'

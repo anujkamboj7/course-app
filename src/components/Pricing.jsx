@@ -1,5 +1,8 @@
-import { Container, FormControlLabel, Stack, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";

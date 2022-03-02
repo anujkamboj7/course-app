@@ -8,7 +8,7 @@ import Pricing from "components/Pricing";
 import Footer from "components/Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { Box } from "@mui/system";
+import Box from "@mui/material/Box";
 
 gsap.registerPlugin(ScrollTrigger);
 

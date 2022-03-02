@@ -1,5 +1,6 @@
-import { Button, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 import { FiZap } from "react-icons/fi";
 
 const PricingList = ({ header, cta, features }) => {
@@ -62,11 +63,12 @@ const PricingList = ({ header, cta, features }) => {
           px: { sm: "20px", lg: "48px" },
         }}
       >
-        {features.map((f) => {
+        {features.map((f, index) => {
           const { text, active } = f;
           return (
             <Typography
               variant='p'
+              key={index}
               sx={{
                 color: "text.primary",
                 fontWeight: 500,
