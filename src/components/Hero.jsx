@@ -33,10 +33,10 @@ const Hero = () => {
               sx={{
                 width: { sm: "100%", md: "70%", lg: "75%" },
                 mx: "auto",
-                fontSize: { sm: "46px", md: "64px", lg: "72px" },
+                fontSize: { sm: "13vw", md: "64px", lg: "72px" },
                 fontWeight: "bold",
                 textAlign: "center",
-                lineHeight: { sm: "52px", md: "70px", lg: "78px" },
+                lineHeight: { sm: "14vw", md: "70px", lg: "78px" },
               }}
             >
               Learn anything you want with{" "}
@@ -44,10 +44,10 @@ const Hero = () => {
                 as='span'
                 color='primary.main'
                 sx={{
-                  fontSize: { sm: "46px", md: "64px", lg: "72px" },
+                  fontSize: { sm: "13vw", md: "64px", lg: "72px" },
                   fontWeight: "bold",
                   textAlign: "center",
-                  lineHeight: { sm: "52px", md: "70px", lg: "78px" },
+                  lineHeight: { sm: "14vw", md: "70px", lg: "78px" },
                 }}
               >
                 CourseApp
@@ -76,7 +76,7 @@ const Hero = () => {
                   display: "inline-block",
                   borderRadius: "40px",
                   textTransform: "none",
-                  fontSize: { sm: 16, md: 18 },
+                  fontSize: { sm: 18 },
                   letterSpacing: 0.4,
                   fontWeight: 700,
                   boxShadow: "none",
@@ -101,7 +101,7 @@ const Hero = () => {
                   ml: 1,
                   borderRadius: "40px",
                   textTransform: "none",
-                  fontSize: { sm: 16, md: 18 },
+                  fontSize: { sm: 18 },
                   letterSpacing: 0.4,
                   boxShadow: "none",
                   fontWeight: 700,

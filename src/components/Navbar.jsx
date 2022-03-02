@@ -1,17 +1,17 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
 import Image from "next/image";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const pages = [
-    { name: "Home", url: "/" },
-    { name: "Features", url: "#features" },
-    { name: "Pricing", url: "#pricing" },
+    { name: "Home", url: "home" },
+    { name: "Features", url: "features" },
+    { name: "Pricing", url: "pricing" },
   ];
 
   return (
@@ -26,13 +26,28 @@ const Navbar = () => {
         }}
         maxWidth='xl'
       >
-        <Link href='/' sx={{ height: 32, width: 167, position: "relative" }}>
-          <Image
-            src='/logo.svg'
-            layout='fill'
-            alt='CourseApp-branding'
-            priority
-          />
+        <Link
+          to='home'
+          spy={true}
+          smooth={true}
+          duration={2000}
+          smooth='easeInQuad'
+        >
+          <Box
+            sx={{
+              height: 32,
+              width: { sm: 140, md: 167 },
+              position: "relative",
+              cursor: "pointer",
+            }}
+          >
+            <Image
+              src='/logo.svg'
+              layout='fill'
+              alt='CourseApp-branding'
+              priority
+            />
+          </Box>
         </Link>
 
         <Box
@@ -41,51 +56,65 @@ const Navbar = () => {
           }}
         >
           {pages.map((page) => (
-            <Button
-              href={page.url}
-              size='medium'
+            <Link
+              to={page.url}
+              spy={true}
+              smooth={true}
+              duration={2000}
+              smooth='easeInQuad'
               key={page.name}
+            >
+              <Button
+                size='medium'
+                sx={{
+                  py: "8px",
+                  px: "15px",
+                  color: "text.primary",
+                  display: "block",
+                  fontWeight: 700,
+                  textTransform: "none",
+                  fontSize: 16,
+                  letterSpacing: 0.4,
+                  ":hover": {
+                    backgroundColor: "primary.light",
+                    transitionDuration: ".1",
+                    color: "primary.main",
+                  },
+                }}
+              >
+                {page.name}
+              </Button>
+            </Link>
+          ))}
+          <Link
+            to='download'
+            spy={true}
+            smooth={true}
+            duration={2000}
+            smooth='easeInQuad'
+          >
+            <Button
+              variant='contained'
               sx={{
-                py: "8px",
-                px: "15px",
-                color: "text.primary",
-                display: "block",
-                fontWeight: 700,
+                color: "#fff",
+                py: "12px",
+                px: "24px",
+                ml: 2,
+                borderRadius: "40px",
                 textTransform: "none",
                 fontSize: 16,
+                fontWeight: 700,
                 letterSpacing: 0.4,
+                boxShadow: "none",
                 ":hover": {
-                  backgroundColor: "primary.light",
-                  transitionDuration: ".1",
-                  color: "primary.main",
+                  boxShadow: "none",
+                  backgroundColor: "primary.dark",
                 },
               }}
             >
-              {page.name}
+              Download Now
             </Button>
-          ))}
-          <Button
-            href='#download'
-            variant='contained'
-            sx={{
-              color: "#fff",
-              py: "12px",
-              px: "24px",
-              ml: 2,
-              borderRadius: "40px",
-              textTransform: "none",
-              fontSize: 16,
-              fontWeight: 700,
-              letterSpacing: 0.4,
-              boxShadow: "none",
-              ":hover": {
-                boxShadow: "none",
-                backgroundColor: "primary.dark",
-              },
-            }}
-          >
-            Download Now
-          </Button>
+          </Link>
         </Box>
 
         {/* Mobile Menu */}
@@ -108,54 +137,74 @@ const Navbar = () => {
             }}
           >
             {pages.map((page) => (
-              <Button
-                onClick={() => setShowMenu(false)}
-                href={page.url}
-                size='medium'
-                key={page.name}
-                sx={{
-                  py: "10px",
-                  px: "34px",
+              <Link
+                to={page.url}
+                spy={true}
+                smooth={true}
+                duration={1500}
+                smooth='easeInQuad'
+                style={{
                   width: "100%",
-                  color: "text.primary",
-                  display: "block",
-                  fontWeight: 700,
+                }}
+                onClick={() => setShowMenu(false)}
+              >
+                <Button
+                  href={page.url}
+                  size='medium'
+                  key={page.name}
+                  sx={{
+                    py: "10px",
+                    px: "16px",
+                    mx: "16px",
+                    color: "text.primary",
+                    display: "block",
+                    fontWeight: 700,
+                    textTransform: "none",
+                    fontSize: 16,
+                    letterSpacing: 0.4,
+                    ":hover": {
+                      backgroundColor: "primary.light",
+                      transitionDuration: ".1",
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
+            ))}
+            <Link
+              to='download'
+              spy={true}
+              smooth={true}
+              duration={1500}
+              smooth='easeInQuad'
+              onClick={() => setShowMenu(false)}
+              style={{ width: "100%" }}
+            >
+              <Button
+                variant='contained'
+                sx={{
+                  color: "#fff",
+                  py: "12px",
+                  px: "20px",
+                  my: "10px",
+                  mx: "24px",
+                  borderRadius: "40px",
                   textTransform: "none",
-                  fontSize: 16,
+                  fontSize: 15,
+                  fontWeight: 700,
                   letterSpacing: 0.4,
+                  boxShadow: "none",
                   ":hover": {
-                    backgroundColor: "primary.light",
-                    transitionDuration: ".1",
-                    color: "primary.main",
+                    boxShadow: "none",
+                    backgroundColor: "primary.dark",
                   },
                 }}
               >
-                {page.name}
+                Download App
               </Button>
-            ))}
-            <Button
-              href='#download'
-              variant='contained'
-              sx={{
-                color: "#fff",
-                py: "12px",
-                px: "20px",
-                my: "10px",
-                mx: "24px",
-                borderRadius: "40px",
-                textTransform: "none",
-                fontSize: 15,
-                fontWeight: 700,
-                letterSpacing: 0.4,
-                boxShadow: "none",
-                ":hover": {
-                  boxShadow: "none",
-                  backgroundColor: "primary.dark",
-                },
-              }}
-            >
-              Download App
-            </Button>
+            </Link>
           </Box>
         )}
 

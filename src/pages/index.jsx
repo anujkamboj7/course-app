@@ -118,12 +118,12 @@ export default function Home() {
     featuresScrollTimeline2
       .fromTo(
         ".features-img-box-2",
-        { x: -100, opacity: 0 },
+        { x: 100, opacity: 0 },
         { x: 0, opacity: 1 }
       )
       .fromTo(
         ".features-content-2",
-        { x: 100, opacity: 0 },
+        { x: -100, opacity: 0 },
         { x: 0, opacity: 1 }
       );
 
@@ -236,7 +236,7 @@ export default function Home() {
     );
 
     const testimonialSection = gsap.timeline({
-      ease: "power4.easeOut",
+      ease: "power1.Out",
       scrollTrigger: {
         trigger: ".testimonial-container",
         start: "top center", // when the top of the trigger hits the top of the viewport
@@ -274,7 +274,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Box sx={{ overflow: "hidden" }}>
+    <Box sx={{ overflow: "hidden" }} id='home'>
       <Head>
         <title>CourseApp - Website Template</title>
         <meta
@@ -294,6 +294,10 @@ export default function Home() {
         <meta property='og:type' content='website' />
         <meta content='summary_large_image' name='twitter:card' />
         <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='viewport'
+          content='width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no'
+        />
       </Head>
 
       <Navbar />
