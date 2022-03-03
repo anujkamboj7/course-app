@@ -21,13 +21,13 @@ export default function Home() {
 
     heroTimeline
       .from(".hero-content", {
-        y: 200,
+        y: 400,
         duration: 1,
         opacity: 0,
         ease: "power4.easeOut",
       })
       .from(".hero-img", {
-        y: 200,
+        y: 400,
         duration: 1,
         opacity: 0,
         ease: "power4.easeOut",
@@ -36,9 +36,10 @@ export default function Home() {
     const heroScrollTimeline = gsap.timeline({
       ease: "power2.easeOut",
       scrollTrigger: {
-        trigger: ".hero-container",
+        trigger: ".navbar",
         start: "top top", // when the top of the trigger hits the top of the viewport
         end: "bottom bottom",
+        endTrigger: ".hero-container",
         scrub: 1,
       },
     });

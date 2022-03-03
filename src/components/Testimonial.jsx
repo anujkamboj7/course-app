@@ -53,7 +53,7 @@ const Testimonial = () => {
   return (
     <Container
       maxWidth='xl'
-      sx={{ py: { sm: "20px", md: "40px", lg: "120px" } }}
+      sx={{ py: { sm: "60px", md: "40px", lg: "120px" }, px: { sm: "32px" } }}
       className='testimonial-container'
     >
       <Box
