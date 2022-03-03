@@ -138,6 +138,7 @@ const Navbar = () => {
           >
             {pages.map((page) => (
               <Link
+                key={page.name}
                 to={page.url}
                 spy={true}
                 smooth={true}
@@ -151,7 +152,6 @@ const Navbar = () => {
                 <Button
                   href={page.url}
                   size='medium'
-                  key={page.name}
                   sx={{
                     py: "10px",
                     px: "16px",
