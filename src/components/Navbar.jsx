@@ -150,7 +150,6 @@ const Navbar = () => {
                 onClick={() => setShowMenu(false)}
               >
                 <Button
-                  href={page.url}
                   size='medium'
                   sx={{
                     py: "10px",
